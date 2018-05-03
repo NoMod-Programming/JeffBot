@@ -30,9 +30,18 @@ void autonomous() {
 //  Arm*  arm  = Arm::getInstance();
 //  Claw* claw = Claw::getInstance();
   Base* base = Base::getInstance();
-  base->moveBaseTo(-5750, -5750);
-  base->turnDegrees(180);
-  base->moveBaseTo(-5750, -5750);
-  base->turnDegrees(180);
-  base->moveBaseTo(-5750, -5750);
+  base->turnDegrees(-30);
+  base->moveBaseTo(-1050, 1050);
+  base->turnDegrees(60);
+  base->moveBaseTo(-1050, 1050);
+  base->moveBaseTo(-1150, 1150);
+  base->turnDegrees(-75);
+  base->moveBaseTo(-1050, 1050);
+  base->turnDegrees(-75);
+  base->moveBaseTo(-1050, 1050);
+  base->turnDegrees(-100);
+  base->moveBaseTo(-1050, 1050);
+  base->moveBaseTo(-1150, 1150);
+  base->turnDegrees(75);
+  base->moveBaseTo(-1250, 1250);
 }

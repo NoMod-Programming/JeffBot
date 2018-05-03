@@ -11,7 +11,7 @@
 #include "subsystems/Base.h"
 
 const int leftBaseMotor = 2;
-const int rightBaseMotor = 10;
+const int rightBaseMotor = 7;
 const int armMotor = 3;
 const int armMotorTwo = 4;
 const int clawMotor = 6;

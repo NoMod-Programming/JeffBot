@@ -49,18 +49,20 @@ void Base::moveBaseTo(int leftSetpoint, int rightSetpoint) {
 
 void Base::turnDegrees(int degrees) {
   gyroReset(gyro);
-  leftMotor->setSetpoint(-degrees * 10);
+  leftMotor->setSetpoint(degrees * 10);
   rightMotor->setSetpoint(degrees * 10);
   int left;
   int right;
   while (abs(gyroGet(gyro)) < abs(degrees)) {
     leftMotor->loop();
     rightMotor->loop();
-    left = -(degrees - gyroGet(gyro));
-    right = degrees - gyroGet(gyro);
-    leftMotor->sensorValue(left * 10);
-    rightMotor->sensorValue(right * 10);
+    left = gyroGet(gyro) * 10;
+    right = gyroGet(gyro) * 10;
+    leftMotor->sensorValue(left);
+    rightMotor->sensorValue(right);
+    printf("Gyro value: %d\n", gyroGet(gyro));
   }
+  printf("DONE!");
 }
 
 void Base::stopAll() {
